@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Market Regime Intelligence</title><style>
 *{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#17253b;font:16px/1.5 system-ui,sans-serif}nav{position:sticky;top:0;z-index:100;padding:12px 20px;background:white;border-bottom:1px solid #dce3ec;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}a,button{color:#185a8d}button,nav a{border:1px solid #dce3ec;background:white;border-radius:8px;padding:9px 12px;font:inherit;cursor:pointer}nav a{text-decoration:none}button[aria-pressed=true]{background:#185a8d;color:white}iframe{border:0;width:100%;display:block;height:1px;background:white}
-</style></head><body><nav><button data-file="latest.html" aria-pressed="true">Latest Report</button><button data-file="previous-day.html" aria-pressed="false">Previous Trading Day</button><a id="open-report" href="latest.html?v=c17b6fecaa12d5f9">Open Full Report</a></nav><iframe id="report" src="latest.html?v=c17b6fecaa12d5f9" title="Latest market report" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe><script>
+</style></head><body><nav><button data-file="latest.html" aria-pressed="true">Latest Report</button><button data-file="previous-day.html" aria-pressed="false">Previous Trading Day</button><a id="open-report" href="latest.html?v=1cf540421a14b774">Open Full Report</a></nav><iframe id="report" src="latest.html?v=1cf540421a14b774" title="Latest market report" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe><script>
 /* Trusted publication UI. This code never asserts that a task is running. */
 (function (global) {
   'use strict';
@@ -36,7 +36,7 @@
   }
 })(typeof window !== 'undefined' ? window : globalThis);
 
-const reportVersion='c17b6fecaa12d5f9';
+const reportVersion='1cf540421a14b774';
 const frame=document.getElementById('report'),openLink=document.getElementById('open-report');
 function resize(){try{const doc=frame.contentDocument,content=doc.querySelector('main')||doc.body;const bottom=content.getBoundingClientRect().bottom+doc.defaultView.scrollY;const margin=parseFloat(doc.defaultView.getComputedStyle(content).marginBottom)||0;frame.style.height=Math.ceil(bottom+margin)+'px'}catch{}}
 let observer;frame.addEventListener('load',()=>{if(observer)observer.disconnect();try{updateNextReportStatus(frame.contentDocument)}catch{}resize();try{observer=new ResizeObserver(resize);observer.observe(frame.contentDocument.querySelector('main')||frame.contentDocument.body)}catch{}});window.addEventListener('resize',resize);
